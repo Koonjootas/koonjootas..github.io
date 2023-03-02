@@ -53,9 +53,13 @@ function writeToScreen(message, className, element) {
      const latitude  = position.coords.latitude;
      const longitude = position.coords.longitude;
 
+  console.log("latitude", latitude)
+  console.log("longitude", longitude)
+
+
      let mapLink = document.querySelectorAll('a');
 
-   mapLink.forEach(element => element.setAttribute("href", "https://www.openstreetmap.org/#map=18/"+latitude+"\/"+longitude));
+   mapLink.forEach(element => element.setAttribute("href", `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`));
    mapLink.forEach(element => element.setAttribute("target", "_blank"));
    }
      navigator.geolocation.getCurrentPosition(success);
